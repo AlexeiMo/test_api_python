@@ -1,0 +1,11 @@
+{
+  "http": {
+    "host_auth": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
+    "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/user/",
+    "username": "",
+    "password": ""
+  },
+  "transactions": {
+    "id": 499262
+  }
+}

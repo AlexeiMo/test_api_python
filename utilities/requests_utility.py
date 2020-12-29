@@ -3,36 +3,29 @@ import logging
 
 import requests
 
-from src.configs.hosts_config import API_HOSTS
-from src.utilities.credentials_utility import CredentialsUtility
-
 LOGGER = logging.getLogger(__name__)
 
 
-class RequestUtility():
+class RequestUtility:
+    token = None
 
-    def __init__(self):
-        creds = CredentialsUtility.get_api_keys()
-        self.auth_url = API_HOSTS['auth_url']
-        self.base_url = API_HOSTS['base_url']
-        self.accessToken = None
-        self.email = creds['email']
-        self.password = creds['password']
-        self.token = None
-        self.login()
+    def __init__(self, group):
+        self.auth_url = group.auth_url
+        self.base_url = group.base_url
 
-    def assert_status_code(self, actual_status_code, expected_status_code):
+    @staticmethod
+    def assert_status_code(actual_status_code, expected_status_code):
         assert actual_status_code == expected_status_code, f"Bad Status code. " \
                                                            f"Expected: {expected_status_code}, " \
                                                            f"Actual: {actual_status_code}."
 
-    def login(self, headers=None):
+    def authorize(self, username, password, headers=None):
         if not headers:
             headers = {"Content-Type": "application/json"}
         payload = {
             "data": {
-                "email": f"{self.email}",
-                "password": f"{self.password}"
+                "email": f"{username}",
+                "password": f"{password}"
             }
         }
         response = requests.post(self.auth_url, headers=headers, data=json.dumps(payload))
