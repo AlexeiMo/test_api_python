@@ -14,7 +14,7 @@ class TransactionsActions:
     def __init__(self, app):
         self.app = app
         self.request_util = RequestUtility(Group(auth_url=app.config['http']['host_auth'],
-                                                 base_url=app.config['http']['host']
+                                                 base_url=app.config['transactions']['host']
                                                  ))
 
     @allure.step("Authorize user to get access token")

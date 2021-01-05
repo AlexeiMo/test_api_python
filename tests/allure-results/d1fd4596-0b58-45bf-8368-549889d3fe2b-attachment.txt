@@ -1,0 +1,3 @@
+[32mINFO    [0m actions.transactions:transactions.py:22 Authorize user to get access token
+[32mINFO    [0m actions.transactions:transactions.py:27 Get transaction from user profile by id
+[32mINFO    [0m actions.transactions:transactions.py:32 Verify match of response transaction to requested one

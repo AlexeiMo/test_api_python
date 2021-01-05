@@ -1,0 +1,226 @@
+{
+  "uid" : "a851978923662ddc",
+  "name" : "test_upload_file",
+  "fullName" : "tests.test_ebanq_qa_suite#test_upload_file",
+  "historyId" : "bfec794800dca8421d972db863824afe",
+  "time" : {
+    "start" : 1609835938011,
+    "stop" : 1609835938938,
+    "duration" : 927
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "config",
+    "time" : {
+      "start" : 1609835937558,
+      "stop" : 1609835937558,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1609835937558,
+      "stop" : 1609835937558,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1609835938011,
+      "stop" : 1609835938011,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Authorize user to get access token",
+      "time" : {
+        "start" : 1609835938011,
+        "stop" : 1609835938326,
+        "duration" : 315
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "group",
+        "value" : "None, None, load_user1@mail.mail, 1qaz!QAZ@WSX"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Upload user file to server",
+      "time" : {
+        "start" : 1609835938326,
+        "stop" : 1609835938779,
+        "duration" : 453
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "filename",
+        "value" : "'9_10_5.csv'"
+      }, {
+        "name" : "content_type",
+        "value" : "'text/csv'"
+      } ],
+      "hasContent" : true,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Verify match of response file info to created one",
+      "time" : {
+        "start" : 1609835938779,
+        "stop" : 1609835938938,
+        "duration" : 159
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "83aa6c3290000825",
+      "name" : "log",
+      "source" : "83aa6c3290000825.txt",
+      "type" : "text/plain",
+      "size" : 309
+    } ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 3,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1609835938942,
+      "stop" : 1609835938944,
+      "duration" : 2
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "files"
+  }, {
+    "name" : "parentSuite",
+    "value" : "tests"
+  }, {
+    "name" : "suite",
+    "value" : "test_ebanq_qa_suite"
+  }, {
+    "name" : "host",
+    "value" : "wsb-008-72"
+  }, {
+    "name" : "thread",
+    "value" : "17064-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "tests.test_ebanq_qa_suite"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "33aa366c38b3db9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609835935439,
+        "stop" : 1609835936401,
+        "duration" : 962
+      }
+    }, {
+      "uid" : "3613f0c6f6c949e0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609835933003,
+        "stop" : 1609835933880,
+        "duration" : 877
+      }
+    }, {
+      "uid" : "2be22d4ea2997a3d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609835930635,
+        "stop" : 1609835931490,
+        "duration" : 855
+      }
+    }, {
+      "uid" : "dc183c76f68b5863",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609835927885,
+        "stop" : 1609835928725,
+        "duration" : 840
+      }
+    }, {
+      "uid" : "81a40ff29de5f1b1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609835924663,
+        "stop" : 1609835925675,
+        "duration" : 1012
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ "files" ]
+  },
+  "source" : "a851978923662ddc.json",
+  "parameterValues" : [ ]
+}

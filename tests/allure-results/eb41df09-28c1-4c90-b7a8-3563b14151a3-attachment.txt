@@ -1,0 +1,4 @@
+[32mINFO    [0m actions.files:files.py:23 Authorize user to get access token
+[32mINFO    [0m actions.files:files.py:28 Upload user file to server
+[32mINFO    [0m actions.files:files.py:37 Verify match of response file info to created one
+[32mINFO    [0m fixture.application:application.py:16 Exit test

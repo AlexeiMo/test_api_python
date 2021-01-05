@@ -1,11 +1,16 @@
 {
   "http": {
     "host_auth": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
-    "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/user/",
-    "username": "",
-    "password": ""
+    "username": "load_user1@mail.mail",
+    "password": "1qaz!QAZ@WSX"
   },
   "transactions": {
+    "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/user/",
     "id": 499262
+  },
+  "files": {
+    "host": "https://api-loadtest-01.ebanq-qa.com/files/private/v1/",
+    "filename": "9_10_5.csv",
+    "content_type": "text/csv"
   }
 }
