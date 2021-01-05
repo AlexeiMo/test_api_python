@@ -5,5 +5,5 @@
 4. activate.bat (activate env)
 5. pip install -r requirements.txt (install dependencies from requirements.txt file)
 6. cd test (go to test folder into the project)
-7. pytest --alluredir=allure-results (run onliner tests)
+7. pytest --alluredir=allure-results (run api tests)
 8. allure generate allure-results --clean -o allure-report (generate allure report)
