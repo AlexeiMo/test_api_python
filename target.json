@@ -1,8 +1,15 @@
 {
   "http": {
     "host_auth": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
-    "username": "",
-    "password": ""
+    "user":{
+      "username": "",
+      "password": "",
+      "user_id": "42337c0a-4c44-4be7-8b2e-cf92ac4388cc"
+    },
+    "admin": {
+      "username": "",
+      "password": ""
+    }
   },
   "transactions": {
     "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/user/",
@@ -12,5 +19,9 @@
     "host": "https://api-loadtest-01.ebanq-qa.com/files/private/v1/",
     "filename": "9_10_5.csv",
     "content_type": "text/csv"
+  },
+  "tba_requests": {
+    "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/",
+    "source_name": "tba_request.json"
   }
 }
