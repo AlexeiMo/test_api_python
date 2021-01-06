@@ -1,8 +1,8 @@
 {
   "http": {
     "host_auth": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
-    "username": "load_user1@mail.mail",
-    "password": "1qaz!QAZ@WSX"
+    "username": "",
+    "password": ""
   },
   "transactions": {
     "host": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/user/",
