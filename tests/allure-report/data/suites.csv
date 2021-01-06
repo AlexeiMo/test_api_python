@@ -1,3 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Tue Jan 05 11:38:57 MSK 2021","Tue Jan 05 11:38:58 MSK 2021","447","tests","test_ebanq_qa_suite","","","","test_get_transaction_by_id",""
-"passed","Tue Jan 05 11:38:58 MSK 2021","Tue Jan 05 11:38:58 MSK 2021","927","tests","test_ebanq_qa_suite","","","","test_upload_file",""
