@@ -28,7 +28,7 @@ class FilesActions:
     @allure.step("Verify match of response file info to created one")
     def verify_file_upload(self):
         LOGGER.info("Verify match of response file info to created one")
-        self.get_all_files(user_id=self.app.config['http']['user']['user_id'])
+        self.get_all_files(user_id=self.app.config['authorization']['user']['user_id'])
         id_list = [item["id"] for item in self.response["data"]["items"]]
         assert self.file_id in id_list, f"Test upload file failed. " \
                                         f"There's no file with id {self.file_id} on server."
@@ -42,7 +42,7 @@ class FilesActions:
     @allure.step("Verify if file was deleted")
     def verify_file_delete(self):
         LOGGER.info("Verify if file was deleted")
-        self.get_all_files(user_id=self.app.config['http']['user']['user_id'])
+        self.get_all_files(user_id=self.app.config['authorization']['user']['user_id'])
         id_list = [item["id"] for item in self.response["data"]["items"]]
         assert self.file_id not in id_list, f"Test delete file failed. " \
                                             f"File with id {self.file_id} was not deleted from server."

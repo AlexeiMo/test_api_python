@@ -13,7 +13,7 @@ class AuthorizationActions:
     def __init__(self, app):
         self.app = app
         self.request_util = RequestUtility()
-        self.base_url = app.config['http']['host_auth']
+        self.base_url = app.config['authorization']['host']
 
     @allure.step("Authorize user to get access token")
     def authorize_user(self, username, password):
