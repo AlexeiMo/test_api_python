@@ -1,0 +1,4 @@
+[32mINFO    [0m actions.authorization:authorization.py:20 Authorize user to get access token
+[32mINFO    [0m actions.tba_requests:tba_requests.py:20 Create new request from user account
+[32mINFO    [0m actions.tba_requests:tba_requests.py:30 Check if request was created correctly
+[32mINFO    [0m fixture.application:application.py:21 Exit test

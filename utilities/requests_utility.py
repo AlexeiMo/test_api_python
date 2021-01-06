@@ -28,34 +28,24 @@ class RequestUtility(object):
             self.token = rs_json['data']['refreshToken']
         return rs_json
 
-    def post(self, endpoint, headers=None, data=None, expected_status_code=200):
-        self.check_token()
-        if not headers:
-            headers = dict()
-        headers["Authorization"] = f"Bearer {self.token}"
-        response = requests.post(endpoint, headers=headers, data=json.loads(data))
-        status_code = response.status_code
-        rs_json = response.json()
-        self.assert_status_code(status_code, expected_status_code)
-        return rs_json
-
     def get(self, endpoint, data=None, headers=None, expected_status_code=200):
         self.check_token()
         if not headers:
             headers = {"Content-Type": "application/json"}
         headers["Authorization"] = f"Bearer {self.token}"
-        response = requests.get(endpoint, headers=headers, data=json.dumps(data))
+        # from pprint import pprint; import pdb; pdb.set_trace()
+        response = requests.get(endpoint, headers=headers, data=data)
         status_code = response.status_code
         rs_json = response.json()
         self.assert_status_code(status_code, expected_status_code)
         return rs_json
 
-    def post_file(self, endpoint, headers=None, files=None, expected_status_code=200):
+    def post(self, endpoint, headers=None, data=None, files=None, expected_status_code=200):
         self.check_token()
         if not headers:
             headers = dict()
         headers["Authorization"] = f"Bearer {self.token}"
-        response = requests.post(endpoint, headers=headers, files=files)
+        response = requests.post(endpoint, headers=headers, data=data, files=files)
         status_code = response.status_code
         rs_json = response.json()
         self.assert_status_code(status_code, expected_status_code)

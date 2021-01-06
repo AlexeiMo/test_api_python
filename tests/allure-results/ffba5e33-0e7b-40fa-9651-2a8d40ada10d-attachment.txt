@@ -1,0 +1,3 @@
+[32mINFO    [0m actions.authorization:authorization.py:20 Authorize user to get access token
+[32mINFO    [0m actions.files:files.py:20 Upload user file to server
+[32mINFO    [0m actions.files:files.py:30 Verify match of response file info to created one

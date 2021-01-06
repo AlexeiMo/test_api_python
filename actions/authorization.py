@@ -7,7 +7,7 @@ import allure
 LOGGER = logging.getLogger(__name__)
 
 
-class AuthActions:
+class AuthorizationActions:
     response = None
 
     def __init__(self, app):
@@ -16,6 +16,6 @@ class AuthActions:
         self.base_url = app.config['http']['host_auth']
 
     @allure.step("Authorize user to get access token")
-    def authorize_user(self, group):
+    def authorize_user(self, username, password):
         LOGGER.info("Authorize user to get access token")
-        self.request_util.authorize(self.base_url, username=group.username, password=group.password)
+        self.request_util.authorize(self.base_url, username=username, password=password)

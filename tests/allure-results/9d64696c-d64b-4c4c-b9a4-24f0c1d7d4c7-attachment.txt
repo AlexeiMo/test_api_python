@@ -1,0 +1,2 @@
+[32mINFO    [0m actions.authorization:authorization.py:20 Authorize user to get access token
+[32mINFO    [0m fixture.application:application.py:18 Exit test
