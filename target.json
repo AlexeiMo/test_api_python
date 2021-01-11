@@ -2,13 +2,13 @@
   "authorization": {
     "host": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
     "user":{
-      "username": "load_user1@mail.mail",
-      "password": "1qaz!QAZ@WSX",
-      "user_id": "42337c0a-4c44-4be7-8b2e-cf92ac4388cc"
+      "username": "",
+      "password": "",
+      "user_id": ""
     },
     "admin": {
-      "username": "super-admin",
-      "password": "fKtTJrmMm4GA"
+      "username": "",
+      "password": ""
     }
   },
   "transactions": {
@@ -24,10 +24,19 @@
     "host_user": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/",
     "host_admin": "https://api-loadtest-01.ebanq-qa.com/accounts/private/v1/admin/"
   },
-  "tba_requests": {
-    "source_name": "tba_request.json"
+  "tba_request": {
+    "source_name": "tba_request.json",
+    "endpoint": "tba-requests",
+    "subject": "TBA"
   },
-  "tbu_requests": {
-    "source_name": "tbu_request.json"
+  "tbu_request": {
+    "source_name": "tbu_request.json",
+    "endpoint": "tbu-requests/user/42337c0a-4c44-4be7-8b2e-cf92ac4388cc",
+    "subject": "TBU"
+  },
+  "owt_request": {
+    "source_name": "owt_request.json",
+    "endpoint": "owt-requests/user/42337c0a-4c44-4be7-8b2e-cf92ac4388cc",
+    "subject": "OWT"
   }
 }

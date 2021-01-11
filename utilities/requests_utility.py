@@ -33,7 +33,6 @@ class RequestUtility(object):
         if not headers:
             headers = {"Content-Type": "application/json"}
         headers["Authorization"] = f"Bearer {self.token}"
-        # from pprint import pprint; import pdb; pdb.set_trace()
         response = requests.get(endpoint, headers=headers, data=data)
         status_code = response.status_code
         rs_json = response.json()

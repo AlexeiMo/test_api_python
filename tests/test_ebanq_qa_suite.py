@@ -36,11 +36,18 @@ class TestEbanqQaSuite(object):
 
     @pytest.mark.tba_requests
     def test_create_tba_request(self, app, auth_user):
-        app.requests_actions.create_request_by_user(source_name=app.config['tba_requests']['source_name'],
-                                                    endpoint="tba-requests")
-        app.requests_actions.verify_new_request(request_type="TBA")
+        app.requests_actions.create_request_by_user(source_name=app.config['tba_request']['source_name'],
+                                                    endpoint=app.config['tba_request']['endpoint'])
+        app.requests_actions.verify_new_request(request_type=app.config['tba_request']['subject'])
 
+    @pytest.mark.tbu_requests
     def test_create_tbu_request(self, app, auth_admin):
-        app.requests_actions.create_request_by_admin(source_name=app.config['tbu_requests']['source_name'],
-                    endpoint="tbu_requests/user/" + app.config['authorization']['user']['user_id'])
-        app.requests_actions.verify_new_request(request_type="TBU")
+        app.requests_actions.create_request_by_admin(source_name=app.config['tbu_request']['source_name'],
+                                                     endpoint=app.config['tbu_request']['endpoint'])
+        app.requests_actions.verify_new_request(request_type=app.config['tbu_request']['subject'])
+
+    @pytest.mark.owt_requests
+    def test_create_owt_request(self, app, auth_admin):
+        app.requests_actions.create_request_by_admin(source_name=app.config['owt_request']['source_name'],
+                                                     endpoint=app.config['owt_request']['endpoint'])
+        app.requests_actions.verify_new_request(request_type=app.config['owt_request']['subject'])
