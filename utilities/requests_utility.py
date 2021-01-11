@@ -50,6 +50,17 @@ class RequestUtility(object):
         self.assert_status_code(status_code, expected_status_code)
         return rs_json
 
+    def patch(self, endpoint, headers=None, data=None, expected_status_code=200):
+        self.check_token()
+        if not headers:
+            headers = dict()
+        headers["Authorization"] = f"Bearer {self.token}"
+        response = requests.patch(endpoint, headers=headers, data=data)
+        status_code = response.status_code
+        rs_json = response.json()
+        self.assert_status_code(status_code, expected_status_code)
+        return rs_json
+
     def delete(self, endpoint, headers=None, expected_status_code=200):
         self.check_token()
         if not headers:

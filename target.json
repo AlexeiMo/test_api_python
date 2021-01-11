@@ -38,5 +38,15 @@
     "source_name": "owt_request.json",
     "endpoint": "owt-requests/user/42337c0a-4c44-4be7-8b2e-cf92ac4388cc",
     "subject": "OWT"
+  },
+  "ca_request": {
+    "source_name": "ca_request.json",
+    "endpoint": "ca-requests",
+    "subject": "CA"
+  },
+  "update_rate": {
+    "rate": "1.435",
+    "source_name": "update_rate.json",
+    "endpoint": "requests/"
   }
 }
