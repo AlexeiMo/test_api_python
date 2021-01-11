@@ -1,7 +1,7 @@
 import pytest
 
 
-@pytest.mark.ebanq_qa
+@pytest.mark.files
 class TestFilesSuite(object):
 
     @pytest.fixture(scope="function")
@@ -9,14 +9,14 @@ class TestFilesSuite(object):
         app.auth_actions.authorize_user(username=app.config['authorization']['user']['username'],
                                         password=app.config['authorization']['user']['password'])
 
-    @pytest.mark.files
+    @pytest.mark.tcid2
     def test_upload_file(self, app, auth_user):
         app.files_actions.upload_file(filename=app.config['files']['filename'],
                                       content_type=app.config['files']['content_type'],
                                       user_id=app.config['authorization']['user']['user_id'])
         app.files_actions.verify_file_upload()
 
-    @pytest.mark.files
+    @pytest.mark.tcid3
     def test_delete_file(self, app, auth_user):
         app.files_actions.upload_file(filename=app.config['files']['filename'],
                                       content_type=app.config['files']['content_type'],
