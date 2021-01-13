@@ -7,12 +7,14 @@ class TestRequestsSuite(object):
     @pytest.fixture(scope="function")
     def auth_user(self, app):
         app.auth_actions.authorize_user(username=app.config['authorization']['user']['username'],
-                                        password=app.config['authorization']['user']['password'])
+                                        password=app.config['authorization']['user']['password'],
+                                        role="user")
 
     @pytest.fixture(scope="function")
     def auth_admin(self, app):
         app.auth_actions.authorize_user(username=app.config['authorization']['admin']['username'],
-                                        password=app.config['authorization']['admin']['password'])
+                                        password=app.config['authorization']['admin']['password'],
+                                        role="admin")
 
     @pytest.mark.tba_requests
     @pytest.mark.tcid4
@@ -49,7 +51,8 @@ class TestRequestsSuite(object):
                                                     endpoint=app.config['tba_request']['endpoint'])
         app.requests_actions.verify_new_request(request_type=app.config['tba_request']['subject'])
         app.auth_actions.authorize_user(username=app.config['authorization']['admin']['username'],
-                                        password=app.config['authorization']['admin']['password'])
+                                        password=app.config['authorization']['admin']['password'],
+                                        role="admin")
         app.requests_actions.update_conversion_rate(source_name=app.config['update_rate']['source_name'],
                                                     endpoint=app.config['update_rate']['endpoint'])
         app.requests_actions.verify_request_rate_update(rate=app.config['update_rate']['rate'])
@@ -61,7 +64,8 @@ class TestRequestsSuite(object):
                                                     endpoint=app.config['tba_request']['endpoint'])
         app.requests_actions.verify_new_request(request_type=app.config['tba_request']['subject'])
         app.auth_actions.authorize_user(username=app.config['authorization']['admin']['username'],
-                                        password=app.config['authorization']['admin']['password'])
+                                        password=app.config['authorization']['admin']['password'],
+                                        role="admin")
         app.requests_actions.execute_request()
         app.requests_actions.verify_request_status(status="executed")
 
@@ -72,6 +76,7 @@ class TestRequestsSuite(object):
                                                     endpoint=app.config['tba_request']['endpoint'])
         app.requests_actions.verify_new_request(request_type=app.config['tba_request']['subject'])
         app.auth_actions.authorize_user(username=app.config['authorization']['admin']['username'],
-                                        password=app.config['authorization']['admin']['password'])
+                                        password=app.config['authorization']['admin']['password'],
+                                        role="admin")
         app.requests_actions.cancel_request()
         app.requests_actions.verify_request_status(status="cancelled")

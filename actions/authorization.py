@@ -16,6 +16,6 @@ class AuthorizationActions:
         self.base_url = app.config['authorization']['host']
 
     @allure.step("Authorize user to get access token")
-    def authorize_user(self, username, password):
+    def authorize_user(self, username, password, role):
         LOGGER.info("Authorize user to get access token")
-        self.request_util.authorize(self.base_url, username=username, password=password)
+        self.request_util.authorize(self.base_url, username=username, password=password, role=role)

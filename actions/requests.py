@@ -20,19 +20,19 @@ class RequestsActions:
     def create_request_by_user(self, source_name, endpoint):
         LOGGER.info("Create new request from user account")
         endpoint = self.user_base_url + endpoint
-        self.create_request(source_name, endpoint)
+        self.create_request(source_name, endpoint, role="user")
 
     @allure.step("Create new request from admin account")
     def create_request_by_admin(self, source_name, endpoint):
         LOGGER.info("Create new request from admin")
         endpoint = self.admin_base_url + endpoint
-        self.create_request(source_name, endpoint)
+        self.create_request(source_name, endpoint, role="admin")
 
-    def create_request(self, source_name, endpoint):
+    def create_request(self, source_name, endpoint, role):
         headers = {"Content-Type": "application/json"}
         source_file = Path("../data") / source_name
         with open(source_file, "rb") as data:
-            self.response = self.request_util.post(endpoint, headers=headers, data=data)
+            self.response = self.request_util.post(endpoint, headers=headers, data=data, role=role)
         self.request_id = self.response['data']['id']
 
     @allure.step("Check if request was created correctly")
@@ -56,7 +56,7 @@ class RequestsActions:
         headers = {"Content-Type": "application/json"}
         source_file = Path("../data") / source_name
         with open(source_file, "rb") as data:
-            self.response = self.request_util.patch(endpoint, headers=headers, data=data)
+            self.response = self.request_util.patch(endpoint, headers=headers, data=data, role="admin")
         self.request_id = self.response['data']['id']
 
     @allure.step("Check if rate of request was updated")
@@ -77,14 +77,14 @@ class RequestsActions:
     def execute_request(self):
         LOGGER.info("Execute pending request as admin")
         endpoint = self.admin_base_url + f"requests/execute/{self.request_id}"
-        self.response = self.request_util.post(endpoint)
+        self.response = self.request_util.post(endpoint, role="admin")
         self.request_id = self.response['data']['id']
 
     @allure.step("Cancel pending request as admin")
     def cancel_request(self):
         LOGGER.info("Cancel pending request as admin")
         endpoint = self.admin_base_url + f"requests/cancel/{self.request_id}"
-        self.response = self.request_util.post(endpoint)
+        self.response = self.request_util.post(endpoint, role="admin")
         self.request_id = self.response['data']['id']
 
     @allure.step("Check request status")

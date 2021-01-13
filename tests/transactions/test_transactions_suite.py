@@ -7,7 +7,8 @@ class TestTransactionsSuite(object):
     @pytest.fixture(scope="function")
     def auth_user(self, app):
         app.auth_actions.authorize_user(username=app.config['authorization']['user']['username'],
-                                        password=app.config['authorization']['user']['password'])
+                                        password=app.config['authorization']['user']['password'],
+                                        role="user")
 
     @pytest.mark.tcid1
     def test_get_transaction_by_id(self, app, auth_user):

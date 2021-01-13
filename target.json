@@ -2,13 +2,13 @@
   "authorization": {
     "host": "https://api-loadtest-01.ebanq-qa.com/users/public/v1/auth/signin",
     "user":{
-      "username": "",
-      "password": "",
+      "username": "load_user1@mail.mail",
+      "password": "1qaz!QAZ@WSX",
       "user_id": "42337c0a-4c44-4be7-8b2e-cf92ac4388cc"
     },
     "admin": {
-      "username": "",
-      "password": ""
+      "username": "super-admin",
+      "password": "fKtTJrmMm4GA"
     }
   },
   "transactions": {
