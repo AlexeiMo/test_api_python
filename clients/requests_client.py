@@ -4,7 +4,7 @@ from pathlib import Path
 import requests
 
 
-class RequestsHelper(object):
+class RequestsClient(object):
 
     def __init__(self, app):
         self.app = app

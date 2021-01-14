@@ -4,7 +4,7 @@ import requests
 from utilities.requests_utility import assert_status_code
 
 
-class FilesHelper(object):
+class FilesClient(object):
 
     def __init__(self, app):
         self.app = app

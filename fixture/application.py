@@ -3,7 +3,7 @@ import logging
 from actions.files import FilesActions
 from actions.requests import RequestsActions
 from actions.transactions import TransactionsActions
-from helpers.authorization_helper import AuthorizationHelper
+from clients.authorization_client import AuthorizationClient
 
 LOGGER = logging.getLogger(__name__)
 
@@ -12,7 +12,7 @@ class Application:
 
     def __init__(self, config):
         self.config = config
-        self.auth_helper = AuthorizationHelper(self)
+        self.auth_helper = AuthorizationClient(self)
         self.transactions_actions = TransactionsActions(self)
         self.files_actions = FilesActions(self)
         self.requests_actions = RequestsActions(self)

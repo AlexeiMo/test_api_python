@@ -1,6 +1,6 @@
 import logging
 import allure
-from helpers.transactions_helper import TransactionsHelper
+from clients.transactions_client import TransactionsClient
 
 LOGGER = logging.getLogger(__name__)
 
@@ -9,12 +9,12 @@ class TransactionsActions:
 
     def __init__(self, app):
         self.app = app
-        self.transactions_helper = TransactionsHelper(app)
+        self.transactions_client = TransactionsClient(app)
 
     @allure.step("Get transaction from user profile by id")
     def get_transaction(self, tr_id):
         LOGGER.info("Get transaction from user profile by id")
-        response = self.transactions_helper.get_transaction_by_id(tr_id)
+        response = self.transactions_client.get_transaction_by_id(tr_id)
         tr_id = response["data"]["id"]
         return tr_id
 

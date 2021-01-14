@@ -3,7 +3,7 @@ import json
 from utilities.requests_utility import assert_status_code
 
 
-class AuthorizationHelper(object):
+class AuthorizationClient(object):
     tokens = {"user": None,
               "admin": None}
 

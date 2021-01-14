@@ -2,7 +2,7 @@ import requests
 from utilities.requests_utility import assert_status_code
 
 
-class TransactionsHelper(object):
+class TransactionsClient(object):
 
     def __init__(self, app):
         self.app = app
