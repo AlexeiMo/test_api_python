@@ -1,6 +1,6 @@
 {
   "accountId": 2907,
-  "amount": "100",
+  "amount": "5",
   "description": "test_admin",
   "debitFromRevenueAccount": true,
   "applyIwtFee": false

@@ -2,7 +2,7 @@
     "accountIdFrom": 2907,
     "accountNumberTo": "DBT495779643",
     "description": "test_admin",
-    "incomingAmount": "50",
-    "outgoingAmount": "50",
+    "incomingAmount": "1",
+    "outgoingAmount": "1",
     "userName": "load"
 }

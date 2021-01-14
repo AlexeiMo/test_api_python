@@ -6,7 +6,7 @@
   "bankLocation": "California",
   "bankName": "1ST PMF BANCORP",
   "bankSwiftBic": "PMFAUS66",
-  "confirmTotalOutgoingAmount": "-100",
+  "confirmTotalOutgoingAmount": "-1",
   "customerAccIban": "GB29NWBK60161331926819",
   "customerAddress": "New-York",
   "customerName": "LoadTest",
@@ -20,7 +20,7 @@
   "intermediaryBankName": "",
   "intermediaryBankSwiftBic": "",
   "isIntermediaryBankRequired": false,
-  "outgoingAmount": "100",
+  "outgoingAmount": "1",
   "refMessage": "31234567",
   "referenceCurrencyCode": "USD"
 }
